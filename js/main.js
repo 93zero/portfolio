@@ -131,7 +131,7 @@ $(function () {
         } else if ($direction === "prev") {
             // .prepend() - 첫번째 자식에 새로운 요소 추가
             container.prepend(container.children()[max - 1]);
-            $(container.children()[0]).css('margin-left', '800');
+            $(container.children()[0]).css('margin-left', '800px');
             TweenMax.to(container.children()[0], 0.8, {
                 marginLeft: 0,
                 ease: Expo.easeOut
@@ -139,26 +139,26 @@ $(function () {
         }
     }
 
-// 이전 버튼 클릭 이벤트 핸들러 
-$('.popup>button.prev').on('click',function(){
-    // 재할당시 앞에 let을 붙이지 않음
-    container = $(this).parent('.popup').find('.popList');
-    max = container.children().length;
-    // pop 이미지 개수를 max 변수에 할당
-    container.addClass('margin-left','-800px').prepend(container.children()[max - 1]);
-    prev(); // 함수호출
-});
-// 다음 버튼 클릭 이벤트 핸들러 
+    // 이전 버튼 클릭 이벤트 핸들러 
+    $('.popup>button.prev').on('click', function () {
+        // 재할당시 앞에 let을 붙이지 않음
+        container = $(this).parent('.popup').find('.popList');
+        max = container.children().length;
+        // pop 이미지 개수를 max 변수에 할당
+        container.addClass('margin-left', '-800px').prepend(container.children()[max - 1]);
+        prev(); // 함수호출
+    });
+    // 다음 버튼 클릭 이벤트 핸들러 
 
-$('.popup>button.next').on('click',function(){
-    // 재할당시 앞에 let을 붙이지 않음
-    container = $(this).parent('.popup').find('.popList');
-    max = container.children().length;
-    // pop 이미지 개수를 max 변수에 할당
-    container.addClass('margin-left','-800px').apend(container.children()[0]);
-    next(); // 함수호출
-});
-// .parent() - 부모선택 
+    $('.popup>button.next').on('click', function () {
+        // 재할당시 앞에 let을 붙이지 않음
+        container = $(this).parent('.popup').find('.popList');
+        max = container.children().length;
+        // pop 이미지 개수를 max 변수에 할당
+        container.addClass('margin-left', '-800px').append(container.children()[0]);
+        next(); // 함수호출
+    });
+    // .parent() - 부모선택 
 
 
     // TweenMax - HTML 요소의 속성을 변경하여 다양한 애니메이션 효과를 줌
